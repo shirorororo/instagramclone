@@ -18,7 +18,6 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       NotificationMailer.notification_mail(@post).deliver  ##追記
-      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to controller: 'users', action: 'show', id:current_user.id, notice: "作成しました！"
     else
       # 入力フォームを再描画します。
