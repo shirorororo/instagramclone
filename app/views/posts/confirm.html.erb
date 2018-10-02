@@ -1,0 +1,20 @@
+<div class="container">
+  <p>以下の内容で、送信する。</p>
+
+  <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+　<%= form.hidden_field :image_cache %>
+  <p>タイトル:<%= @post.title %></p>
+  <p>本文:<%= @post.content %></p>
+  <p>画像:<%= image_tag(@post.image) %></p>
+  <%= form.submit  "登録する" %>
+<% end %>
+
+  <%= form_with(model: @post, url: new_post_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>
+</div>

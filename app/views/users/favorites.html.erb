@@ -1,0 +1,9 @@
+<div class="container">
+  <p>My Favorites</p>
+  <p><%= notice %></p>
+  <ul class="row">
+    <% @favorites_posts.each do |favorite| %>
+    <li class="col-sm-6 col-md-6"><%= link_to(favorite.title, post_path(id: favorite.id)) %></li> 
+    <% end %>
+  </ul>
+</div>

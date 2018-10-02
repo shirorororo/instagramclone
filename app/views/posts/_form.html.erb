@@ -1,0 +1,30 @@
+<div class="container">
+<%= form_with(model: @post, local: true ,url: choose_new_or_edit ) do |form| %>  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="post_image">
+    <%= image_tag(@post.image.url) if @post.image.url %>
+    <%= form.file_field :image, id: :post_image, class: 'form_image'%>
+  </div>
+  <div class="post_title">
+    <%= form.label :タイトル %>
+    <%= form.text_field :title, class: 'form_title' %>
+  </div>
+  <div class="post_content">
+    <%= form.label :本文 %>
+    <%= form.text_field :content, class: 'form_content' %>
+  </div>
+
+  <%= form.submit :投稿する, class: 'btn btn-info' %>
+<% end %>
+
+<br><%= link_to "一覧画面にもどる", posts_path %>
+</div>

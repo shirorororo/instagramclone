@@ -1,0 +1,14 @@
+<div class="container">
+  <p><%= notice %></p>
+  <p>ユーザー名：<%= @user.name %></p>
+  <p>メールアドレス：<%= @user.email %></p>
+  <p><%= image_tag @user.image %><br>ユーザー画像</p>
+<%= link_to '編集する', edit_user_path(current_user) %>
+  <h4>My Posts</h4>
+  <ul class="row">
+    <% @user.posts.each do |post| %>
+    <li class="col-sm-6 col-md-6"><%= post.title %></li> 
+    <li class="col-sm-6 col-md-4"><%= link_to 'show', post_path(post.id), class: 'btn btn-info' %></li> 
+    <% end %>
+  </ul>
+</div>

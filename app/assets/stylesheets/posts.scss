@@ -1,0 +1,78 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form_title {
+  margin: 10px;
+  border-style: solid;
+  border-color:#ffead6;
+  background:#fff;
+  padding: 10px;
+  font-size: 15px;
+  
+}
+
+.form_content {
+  margin: 10px;
+  border-style: solid;
+  border-color:#ffead6;
+  background:#fff;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.form_image {
+  position: center;
+}
+
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.col-md-6 {
+  margin: 5px;
+  border-radius: 0px;
+  border-style: solid;
+  border-color: #ffead6;
+  background: #ffead6;
+  padding: 10px;
+  font-size: 15px;
+  opacity: 0.5;
+}
+
+.col-md-4 {
+  margin: 10px;
+  position: center;
+
+}
+
+
+
+ul,li {
+  list-style: none;
+}
+
+.btn-info{
+  background: #ffbf7f;
+  border-color: #ffbf7f;
+  color: #FFF;
+}
+
+.btn-info:hover {
+　opacity: 0.5 ;
+  background: #ffbf7f;
+  border-color: #ffbf7f;
+}
+
+
+.btn-info:active {
+　opacity: 0.5 ;
+  background: #ffbf7f;
+  border-color: #ffbf7f;
+}
+
+.btn-danger {
+  background: #ffb6c1; 
+  border-color: #ffb6c1;
+  color: #696969;
+}

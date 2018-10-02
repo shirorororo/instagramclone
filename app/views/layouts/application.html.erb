@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InstagramClone</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <ul>
+      <h2>InstagramClone</h2>
+      <h3>Catch every world moment, and let's share it!</h3>
+    <% if logged_in? %>
+      <li><%= link_to "TOP", "/top" %>
+      <li><%= link_to "View Posts", posts_path%>
+      <li><%= link_to "New Post", new_post_path %>
+      <li><%= link_to "My Favorites", "/users/favorites/#{current_user.id}" %>
+      <li><%= link_to "My Page", "/users/#{current_user.id}"  %>      
+      <li><%= link_to "Logout", session_path(current_user.id), method: :delete %>
+    <% else %>
+      <li><%= link_to "TOP", "/top" %></li>
+      <li><%= link_to "Sign up", new_user_path %></li>
+      <li><%= link_to "Login", new_session_path %></li>
+    <% end %>
+    </ul>
+  </header>
+  　<% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %> 
+
+<%= yield %>
+
+
+
+</body>
+</html>
