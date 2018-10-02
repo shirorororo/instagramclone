@@ -3,7 +3,9 @@
   <p><%= notice %></p>
   <ul class="row">
     <% @favorites_posts.each do |favorite| %>
-    <li class="col-sm-6 col-md-6"><%= link_to(favorite.title, post_path(id: favorite.id)) %></li> 
+    <li class="col-sm-6 col-md-6"><%= favorite.title %></li> 
+    <li class="col-sm-6 col-md-4"><%= link_to 'show', post_path(id: favorite.id) class: 'btn btn-info' %></li> 
     <% end %>
   </ul>
 </div>
+
