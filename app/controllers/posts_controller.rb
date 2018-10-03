@@ -65,7 +65,7 @@ class PostsController < ApplicationController
   def correct_user
      post = Post.find(params[:id])
      if current_user.id != post.user.id
-       redirect_to route_path
+       redirect_to root_path
      end
   end
 end
