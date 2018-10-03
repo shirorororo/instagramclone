@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update,:destroy]
+
   def index
      @posts = Post.all 
   end
-
 
   def new
     if params[:back]
@@ -33,7 +34,6 @@ class PostsController < ApplicationController
   
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
-
   end
   
   def edit
@@ -62,4 +62,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
   
+  def correct_user
+     post = Post.find(params[:id])
+     if current_user.id != post.user.id
+       redirect_to route_path
+     end
+  end
 end

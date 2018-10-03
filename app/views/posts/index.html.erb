@@ -1,6 +1,6 @@
 <div class="container">
   <ul class="row">
-    <p>ユーザー編集</p>
+    <p>All Posts</p>
     <% @posts.each do |post| %>
     <li class="col-sm-6 col-md-6"><%= post.title %></li> 
     <li class="col-sm-6 col-md-4"><%= link_to 'show', post_path(post.id), class: 'btn btn-info' %></li> 
